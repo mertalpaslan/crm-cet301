@@ -13,5 +13,9 @@ namespace CRM
         }
 
         public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<Deal> Deals { get; set; }
     }
 }
