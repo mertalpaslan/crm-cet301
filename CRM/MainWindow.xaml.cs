@@ -23,6 +23,10 @@ namespace CRM
         public MainWindow()
         {
             InitializeComponent();
+            using (AppDbContext db = new AppDbContext())
+            {
+                Grid1.ItemsSource = db.Products.ToList();
+            }
         }
     }
 }
