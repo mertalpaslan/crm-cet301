@@ -1,0 +1,5 @@
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\CRM.csprojAssemblyReference.cache
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\CRM_MarkupCompile.cache
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\CRM_MarkupCompile.lref
