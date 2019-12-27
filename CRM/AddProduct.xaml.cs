@@ -17,6 +17,7 @@ namespace CRM
     /// </summary>
     public partial class AddProduct : Window
     {
+        AppDbContext db = new AppDbContext();
         public AddProduct()
         {
             InitializeComponent();
@@ -24,6 +25,15 @@ namespace CRM
 
         private void addProductBtn_Click(object sender, RoutedEventArgs e)
         {
+            Product newProduct = new Product()
+            {
+                Name = nameTB.Text,
+                Description = descriptionTB.Text,
+                Price = int.Parse(priceTB.Text)
+            };
+            db.Products.Add(newProduct);
+            db.SaveChanges();
+            this.Hide();
 
         }
     }

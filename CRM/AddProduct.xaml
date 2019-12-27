@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="AddProduct" Height="450" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="450,150,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
-        <TextBox HorizontalAlignment="Left" Margin="450,0,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" Height="30"/>
-        <TextBox HorizontalAlignment="Left" Margin="450,250,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="nameTB"  HorizontalAlignment="Left" Margin="450,150,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="descriptionTB" HorizontalAlignment="Left" Margin="450,0,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" Height="30"/>
+        <TextBox x:Name="priceTB" HorizontalAlignment="Left" Margin="450,250,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
         <TextBlock HorizontalAlignment="Left" Margin="170,150,0,0" Text="Product Name" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
         <TextBlock HorizontalAlignment="Left" Margin="170,204,0,0" Text="Description" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
         <TextBlock HorizontalAlignment="Left" Margin="170,252,0,0" Text="Price" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>

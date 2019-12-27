@@ -32,5 +32,11 @@ namespace CRM
                 }
                 }
         }
+
+        private void addProductPageBtn(object sender, RoutedEventArgs e)
+        {
+            AddProduct APW = new AddProduct();
+            APW.ShowDialog();
+        }
     }
 }
