@@ -20,17 +20,18 @@ namespace CRM
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static ListView Products;
+
+        AppDbContext db = new AppDbContext();
         public MainWindow()
         {
             InitializeComponent();
-            using (AppDbContext db = new AppDbContext())
-            {
-                var productData = db.Products.ToList();
-                foreach (var item in productData)
-                {
-                    ProductList.Items.Add(item);
-                }
-                }
+            Load();
+        }
+        private void Load()
+        {
+            PList.ItemsSource = db.Products.ToList();
+            Products = PList;
         }
 
         private void addProductPageBtn(object sender, RoutedEventArgs e)
@@ -38,5 +39,24 @@ namespace CRM
             AddProduct APW = new AddProduct();
             APW.ShowDialog();
         }
+
+        private void pEditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditProduct EPW = new EditProduct();
+            EPW.ShowDialog();
+        }
+
+
+
+        private void pDeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int id = (PList.SelectedItem as Product).Id;
+            var selectedProduct = db.Products.Where(p => p.Id == id).Single();
+            db.Products.Remove(selectedProduct);
+            db.SaveChanges();
+            PList.ItemsSource = db.Products.ToList();
+
+        }
+
     }
 }

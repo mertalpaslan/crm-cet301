@@ -21,7 +21,7 @@
             </TabItem>
             <TabItem Width="150" Height="50" Header="Products" >
                 <Canvas>
-                    <ListView Name="ProductList" VerticalAlignment="Top" Height="250">
+                    <ListView x:Name="PList" x:FieldModifier="public" Height="250">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}">
@@ -34,8 +34,8 @@
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <Button x:Name="editBtn" Content="Edit"/>
-                                                <Button x:Name="deleteBtn" Content="Delete"/>
+                                                <Button x:Name="pEditBtn" Content="Edit" HorizontalAlignment="Center" Click="pEditBtn_Click"/>
+                                                <Button x:Name="pDeleteBtn" Content="Delete" HorizontalAlignment="Center" Click="pDeleteBtn_Click"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -46,7 +46,7 @@
                     <Button Content="Add Product" Canvas.Left="450" Canvas.Top="300" Height="25" Width="135" Click="addProductPageBtn"/>
                 </Canvas>
             </TabItem>
-            
+
             <TabItem Width="150" Height="50" Header="Deals" >
             </TabItem>
         </TabControl>
