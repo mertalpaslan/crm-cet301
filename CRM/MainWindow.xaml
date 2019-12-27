@@ -6,7 +6,36 @@
         xmlns:local="clr-namespace:CRM"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name ="Grid1" />
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Customer Relationship Management" Grid.ColumnSpan="1" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEC0E0E"/>
+        <TabControl TabStripPlacement="Left" Grid.Row="1">
+            <TabItem Width="150" Height="50" Header="Dashboard">
+                
+            </TabItem>
+            <TabItem Width="150" Height="50" Header="Customers">
+                
+            </TabItem>
+            <TabItem Width="150" Height="50" Header="Products" >
+                <ListView Name="ProductList">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}">   
+                            </GridViewColumn>
+                            <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}">
+                            </GridViewColumn>
+                            <GridViewColumn Header="Description" Width="300" DisplayMemberBinding="{Binding Description}">
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Width="150" Height="50" Header="Deals" >
+                
+            </TabItem>
+            </TabControl>
     </Grid>
 </Window>

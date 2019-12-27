@@ -15,5 +15,7 @@ namespace CRM
         public int ProductId { get; set; }
 
         public int Amount { get; set; }
+
+        public bool is_paid { get; set; }
     }
-}
+} 

@@ -25,7 +25,8 @@ namespace CRM
             InitializeComponent();
             using (AppDbContext db = new AppDbContext())
             {
-                Grid1.ItemsSource = db.Products.ToList();
+                var productData = db.Products.ToList();
+                ProductList.Items.Add(productData);
             }
         }
     }
