@@ -44,3 +44,5 @@ C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\CRM.AssemblyInfo.cs
 C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\CRM.csproj.CopyComplete
 C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\CRM.dll
 C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\CRM.pdb
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\AddProduct.g.cs
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\AddProduct.baml

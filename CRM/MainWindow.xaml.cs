@@ -26,8 +26,11 @@ namespace CRM
             using (AppDbContext db = new AppDbContext())
             {
                 var productData = db.Products.ToList();
-                ProductList.Items.Add(productData);
-            }
+                foreach (var item in productData)
+                {
+                    ProductList.Items.Add(item);
+                }
+                }
         }
     }
 }

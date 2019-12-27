@@ -14,28 +14,40 @@
         <TextBlock Text="Customer Relationship Management" Grid.ColumnSpan="1" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEC0E0E"/>
         <TabControl TabStripPlacement="Left" Grid.Row="1">
             <TabItem Width="150" Height="50" Header="Dashboard">
-                
+
             </TabItem>
             <TabItem Width="150" Height="50" Header="Customers">
-                
+
             </TabItem>
             <TabItem Width="150" Height="50" Header="Products" >
-                <ListView Name="ProductList">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}">   
-                            </GridViewColumn>
-                            <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}">
-                            </GridViewColumn>
-                            <GridViewColumn Header="Description" Width="300" DisplayMemberBinding="{Binding Description}">
-                            </GridViewColumn>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
+                <Canvas>
+                    <ListView Name="ProductList" VerticalAlignment="Top" Height="250">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Description" Width="100" DisplayMemberBinding="{Binding Description}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Actions" Width="200" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:Name="editBtn" Content="Edit"/>
+                                                <Button x:Name="deleteBtn" Content="Delete"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Content="Add Product" Canvas.Left="450" Canvas.Top="300" Height="26" Width="134"/>
+                </Canvas>
             </TabItem>
             <TabItem Width="150" Height="50" Header="Deals" >
-                
             </TabItem>
-            </TabControl>
+        </TabControl>
     </Grid>
 </Window>

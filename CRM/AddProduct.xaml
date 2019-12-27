@@ -1,0 +1,19 @@
+﻿<Window x:Class="CRM.AddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM"
+        mc:Ignorable="d"
+        Title="AddProduct" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Margin="450,150,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="450,0,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" Height="30"/>
+        <TextBox HorizontalAlignment="Left" Margin="450,250,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="170,150,0,0" Text="Product Name" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="170,204,0,0" Text="Description" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="170,252,0,0" Text="Price" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <Button Content="addProductBtn" HorizontalAlignment="Left" Margin="485,321,0,0" VerticalAlignment="Top" Height="30" Width="150" Click="addProductBtn_Click"/>
+
+    </Grid>
+</Window>
