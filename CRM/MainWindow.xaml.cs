@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,13 @@ namespace CRM
     {
         public static ListView Products;
         public static ListView Customers;
+        public static ListView Deals;
+        public static ListView Manipulated;
+
 
         AppDbContext db = new AppDbContext();
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,10 +37,24 @@ namespace CRM
         }
         private void Load()
         {
+
+             var JoinedDeals = (from d in db.Deals
+                        join p in db.Products
+                        on d.ProductId equals p.Id
+                        join c in db.Customers
+                         on d.CustomerId equals c.Id
+                        select new { CustomerName = c.Name, CustomerId = c.Id, ProductName = p.Name, ProductId = p.Id, DealId = d.Id,
+                            Amount = d.Amount, TotalPrice = p.Price * d.Amount, UnitPrice = p.Price }).ToList();
+
+
+
             CList.ItemsSource = db.Customers.ToList();
             Customers = CList;
             PList.ItemsSource = db.Products.ToList();
             Products = PList;
+            DList.ItemsSource = JoinedDeals;
+            Deals = DList;
+
         }
 
 
@@ -88,6 +108,25 @@ namespace CRM
             db.Customers.Remove(selectedCustomer);
             db.SaveChanges();
             CList.ItemsSource = db.Customers.ToList();
+
+        }
+
+
+
+        // Deal
+
+        private void dDeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+
+            db.SaveChanges();
+         //   DList.ItemsSource = JoinedDeals.ToList();
+        }
+
+        private void dEditBtn_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
