@@ -48,3 +48,7 @@ C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\AddProduct.g.cs
 C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\AddProduct.baml
 C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\EditProduct.g.cs
 C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\EditProduct.baml
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\AddCustomer.g.cs
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\EditCustomer.g.cs
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\AddCustomer.baml
+C:\Users\dreja\source\repos\CRM\CRM\obj\Debug\netcoreapp3.1\EditCustomer.baml

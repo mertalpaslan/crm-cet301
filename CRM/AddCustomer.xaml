@@ -1,0 +1,20 @@
+﻿<Window x:Class="CRM.AddCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM"
+        mc:Ignorable="d"
+        Title="Add Customer" Height="294" Width="541">
+    <Grid>
+        <TextBlock Text="Add New Product" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#0095FF" Margin="0,6,0,0"/>
+        <TextBox x:Name="nameTB"  HorizontalAlignment="Left" Margin="309,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="adressTB" HorizontalAlignment="Left" Margin="309,110,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="cnumberTB" HorizontalAlignment="Left" Margin="309,158,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,58,0,0" Text="Customer Name" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,112,0,0" Text="Address" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,160,0,0" Text="Contact Number" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <Button Content="Add Customer" HorizontalAlignment="Left" Margin="309,211,0,0" VerticalAlignment="Top" Height="30" Width="150" Click="addCustomerBtn_Click"/>
+
+    </Grid>
+</Window>

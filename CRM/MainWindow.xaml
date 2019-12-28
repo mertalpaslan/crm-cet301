@@ -16,9 +16,35 @@
             <TabItem Width="150" Height="50" Header="Dashboard">
 
             </TabItem>
+                <!-- Customer -->
             <TabItem Width="150" Height="50" Header="Customers">
-
+                <Canvas>
+                    <ListView x:Name="CList" x:FieldModifier="public" Height="250" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Adress" Width="200" DisplayMemberBinding="{Binding Address}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Contact Number" Width="150" DisplayMemberBinding="{Binding ContactNumber}">
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Content="Add Customer" Canvas.Left="29" Canvas.Top="300" Height="25" Width="135" Click="addCustomerPageBtn"/>
+                    <Button x:Name="cEditBtn" Content="Edit" Click="cEditBtn_Click" Canvas.Left="471" Canvas.Top="300" Width="58" Height="25" RenderTransformOrigin="0.547,0.286"/>
+                    <Button x:Name="cDeleteBtn" Content="Delete" Click="cDeleteBtn_Click" Canvas.Left="541" Canvas.Top="300" Height="25" Width="58"/>
+                </Canvas>
             </TabItem>
+            
+            
+            
+            
+            
+            
+            <!--Product Tab-->
             <TabItem Width="150" Height="50" Header="Products" >
                 <Canvas>
                     <ListView x:Name="PList" x:FieldModifier="public" Height="250" >
