@@ -42,7 +42,8 @@ namespace CRM
 
         private void pEditBtn_Click(object sender, RoutedEventArgs e)
         {
-            EditProduct EPW = new EditProduct();
+            int Id = (PList.SelectedItem as Product).Id;
+            EditProduct EPW = new EditProduct(Id);
             EPW.ShowDialog();
         }
 

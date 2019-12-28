@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM"
         mc:Ignorable="d"
-        Title="AddProduct" Height="450" Width="800">
+        Title="AddProduct" Height="294" Width="541">
     <Grid>
-        <TextBox x:Name="nameTB"  HorizontalAlignment="Left" Margin="450,150,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
-        <TextBox x:Name="descriptionTB" HorizontalAlignment="Left" Margin="450,0,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" Height="30"/>
-        <TextBox x:Name="priceTB" HorizontalAlignment="Left" Margin="450,250,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
-        <TextBlock HorizontalAlignment="Left" Margin="170,150,0,0" Text="Product Name" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
-        <TextBlock HorizontalAlignment="Left" Margin="170,204,0,0" Text="Description" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
-        <TextBlock HorizontalAlignment="Left" Margin="170,252,0,0" Text="Price" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
-        <Button Content="addProductBtn" HorizontalAlignment="Left" Margin="485,321,0,0" VerticalAlignment="Top" Height="30" Width="150" Click="addProductBtn_Click"/>
+        <TextBlock Text="Add New Product" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#0095FF" Margin="0,6,0,0"/>
+        <TextBox x:Name="nameTB"  HorizontalAlignment="Left" Margin="309,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="descriptionTB" HorizontalAlignment="Left" Margin="309,110,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="priceTB" HorizontalAlignment="Left" Margin="309,158,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,58,0,0" Text="Product Name" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,112,0,0" Text="Description" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,160,0,0" Text="Price" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <Button Content="Add Product" HorizontalAlignment="Left" Margin="309,211,0,0" VerticalAlignment="Top" Height="30" Width="150" Click="addProductBtn_Click"/>
 
     </Grid>
 </Window>

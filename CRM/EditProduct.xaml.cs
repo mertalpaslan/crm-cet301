@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -17,9 +18,27 @@ namespace CRM
     /// </summary>
     public partial class EditProduct : Window
     {
-        public EditProduct()
+        AppDbContext db = new AppDbContext();
+        int Id;
+        public EditProduct(int productId)
         {
             InitializeComponent();
+            Id = productId;
+        }
+        private void editProductBtn_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                Product updateProduct = (from p in db.Products
+                                         where p.Id == Id
+                                         select p).Single();
+
+                // updateProduct.Name = nametextbox.name
+
+                db.SaveChanges();
+                MainWindow.Products.ItemsSource = db.Products.ToList();
+                this.Hide();
+
+            }
         }
     }
 }
