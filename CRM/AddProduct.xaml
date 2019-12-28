@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM"
         mc:Ignorable="d"
-        Title="AddProduct" Height="294" Width="541">
+        Title="Add Product" Height="294" Width="541">
     <Grid>
         <TextBlock Text="Add New Product" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#0095FF" Margin="0,6,0,0"/>
         <TextBox x:Name="nameTB"  HorizontalAlignment="Left" Margin="309,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>

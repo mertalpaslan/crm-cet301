@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM"
         mc:Ignorable="d"
-        Title="EditProduct" Height="450" Width="800">
+        Title="Edit Product" Height="294" Width="541">
     <Grid>
-        
+        <TextBlock Text="Edit Product" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#0095FF" Margin="0,6,0,0"/>
+        <TextBox x:Name="nameTB"  HorizontalAlignment="Left" Margin="309,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="descriptionTB" HorizontalAlignment="Left" Margin="309,110,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBox x:Name="priceTB" HorizontalAlignment="Left" Margin="309,158,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,58,0,0" Text="Product Name" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,112,0,0" Text="Description" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,160,0,0" Text="Price" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"/>
+        <Button Content="Edit Product" HorizontalAlignment="Left" Margin="309,211,0,0" VerticalAlignment="Top" Height="30" Width="150" Click="editProductBtn_Click"/>
+
     </Grid>
 </Window>
