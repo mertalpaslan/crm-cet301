@@ -35,7 +35,7 @@ namespace CRM
             InitializeComponent();
             Load();
         }
-        private void Load()
+        public void Load()
         {
 
              var JoinedDeals = (from d in db.Deals
@@ -128,6 +128,12 @@ namespace CRM
         private void dEditBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void addDealPageBtn(object sender, RoutedEventArgs e)
+        {
+            AddDeal ADW = new AddDeal();
+            ADW.ShowDialog();
         }
     }
 }

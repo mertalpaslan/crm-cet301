@@ -86,7 +86,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <!--   <Button Content="Add Deal" Canvas.Left="29" Canvas.Top="300" Height="25" Width="135" Click="addDealPageBtn"/> -->
+                    <Button Content="Add Deal" Canvas.Left="29" Canvas.Top="300" Height="25" Width="135" Click="addDealPageBtn"/>
                     <Button x:Name="dEditBtn" Content="Edit" Click="dEditBtn_Click" Canvas.Left="471" Canvas.Top="300" Width="58" Height="25" RenderTransformOrigin="0.547,0.286"/>
                     <Button x:Name="dDeleteBtn" Content="Delete" Click="dDeleteBtn_Click" Canvas.Left="541" Canvas.Top="300" Height="25" Width="58"/>
                 </Canvas>
