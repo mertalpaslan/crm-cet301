@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace CRM
-{
+{ 
     /// <summary>
     /// Interaction logic for AddDeal.xaml
     /// </summary>
@@ -35,6 +35,8 @@ namespace CRM
             };
             db.Deals.Add(newDeal);
             db.SaveChanges();
+            MainWindow a = new MainWindow();
+            a.Load();
 
             this.Hide();
 

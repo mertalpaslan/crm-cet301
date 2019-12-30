@@ -25,7 +25,7 @@ namespace CRM
         public static ListView Customers;
         public static ListView Deals;
         public static ListView Manipulated;
-
+        
 
         AppDbContext db = new AppDbContext();
 
@@ -34,19 +34,19 @@ namespace CRM
         {
             InitializeComponent();
             Load();
+
         }
         public void Load()
         {
-
-             var JoinedDeals = (from d in db.Deals
+        var JoinedDeals = (from d in db.Deals
                         join p in db.Products
                         on d.ProductId equals p.Id
                         join c in db.Customers
                          on d.CustomerId equals c.Id
-                        select new { CustomerName = c.Name, CustomerId = c.Id, ProductName = p.Name, ProductId = p.Id, DealId = d.Id,
-                            Amount = d.Amount, TotalPrice = p.Price * d.Amount, UnitPrice = p.Price }).ToList();
+                        select new DealProfile { CustomerName = c.Name, CustomerId = c.Id, ProductName = p.Name, ProductId = p.Id, DealId = d.Id,
+                            Amount = d.Amount, TotalPrice = p.Price * d.Amount, UnitPrice = p.Price }).ToList<DealProfile>();
 
-
+            
 
             CList.ItemsSource = db.Customers.ToList();
             Customers = CList;
@@ -54,9 +54,13 @@ namespace CRM
             Products = PList;
             DList.ItemsSource = JoinedDeals;
             Deals = DList;
+            DList.Items.Refresh();
+            DList.ItemsSource = null;
+            DList.Items.Refresh();
+            DList.ItemsSource = JoinedDeals;
+            DList.Items.Refresh();
 
         }
-
 
         // Product
         private void addProductPageBtn(object sender, RoutedEventArgs e)
@@ -115,10 +119,31 @@ namespace CRM
 
         // Deal
 
+
+        public class DealProfile
+        {
+            public string CustomerName { get; set; }
+            
+            public int CustomerId { get; set; }
+
+            public string ProductName { get; set; }
+
+            public int ProductId { get; set; }
+
+            public int DealId { get; set; }
+
+            public int UnitPrice { get; set; }
+
+            public int Amount { get; set; }
+
+            public int TotalPrice { get; set; }
+
+        }
+
         private void dDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
 
-
+            MessageBox.Show(DList.SelectedItems.ToString());
 
 
             db.SaveChanges();
