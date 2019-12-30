@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\dreja\source\repos\CRM\CRM\App.xaml
-6-948316166
+7-196693962
 
-23649270477
+24-23924386
 210808904241
-AddCustomer.xaml;AddDeal.xaml;AddProduct.xaml;EditCustomer.xaml;EditProduct.xaml;MainWindow.xaml;
+AddCustomer.xaml;AddDeal.xaml;AddProduct.xaml;EditCustomer.xaml;EditDeal.xaml;EditProduct.xaml;MainWindow.xaml;
 
-True
+False
 

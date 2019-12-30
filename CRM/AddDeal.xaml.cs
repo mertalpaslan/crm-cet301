@@ -23,21 +23,27 @@ namespace CRM
         {
             InitializeComponent();
         }
+        
 
         private void addDealBtn_Click(object sender, RoutedEventArgs e)
         {
+            bool check = IsPaid.IsChecked ?? false;
             Deal newDeal = new Deal()
+           
             {
                 Name = nameTB.Text,
                 ProductId = int.Parse(productTB.Text),
                 CustomerId = int.Parse(customerTB.Text),
-                Amount = int.Parse(amountTB.Text)
+                Amount = int.Parse(amountTB.Text),
+                is_paid = check
             };
+
+            
+
             db.Deals.Add(newDeal);
             db.SaveChanges();
-            MainWindow a = new MainWindow();
-            a.Load();
-
+            MainWindow window = (MainWindow)Application.Current.MainWindow;
+            window.Load();
             this.Hide();
 
         }

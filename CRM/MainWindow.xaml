@@ -14,9 +14,13 @@
         <TextBlock Text="Customer Relationship Management" Grid.ColumnSpan="1" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#0095FF"/>
         <TabControl TabStripPlacement="Left" Grid.Row="1">
             <TabItem Width="150" Height="50" Header="Dashboard">
+                <Canvas>
+                    <Label Content="Total Deals"/>
+                    <TextBlock x:Name="totalDeals" Canvas.Left="18" Canvas.Top="31" Text="TextBlock" TextWrapping="Wrap"/>
+                </Canvas>
 
             </TabItem>
-                <!-- Customer -->
+            <!-- Customer -->
             <TabItem Width="150" Height="50" Header="Customers">
                 <Canvas>
                     <ListView x:Name="CList" x:FieldModifier="public" Height="250" >
@@ -38,12 +42,12 @@
                     <Button x:Name="cDeleteBtn" Content="Delete" Click="cDeleteBtn_Click" Canvas.Left="541" Canvas.Top="300" Height="25" Width="58"/>
                 </Canvas>
             </TabItem>
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
             <!--Product Tab-->
             <TabItem Width="150" Height="50" Header="Products" >
                 <Canvas>
@@ -71,17 +75,21 @@
                     <ListView x:Name="DList" x:FieldModifier="public" Height="250" >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding DealId}">
+                                <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding DealId}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Product" Width="150" DisplayMemberBinding="{Binding ProductName}">
+                                <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding DealName}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Customer" Width="150" DisplayMemberBinding="{Binding CustomerName}">
+                                <GridViewColumn Header="Product" Width="80" DisplayMemberBinding="{Binding ProductName}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Amount" Width="60" DisplayMemberBinding="{Binding Amount}">
+                                <GridViewColumn Header="Customer" Width="80" DisplayMemberBinding="{Binding CustomerName}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Unit Price" Width="70" DisplayMemberBinding="{Binding UnitPrice}">
+                                <GridViewColumn Header="Amount" Width="80" DisplayMemberBinding="{Binding Amount}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Total Price" Width="70" DisplayMemberBinding="{Binding TotalPrice}">
+                                <GridViewColumn Header="Unit Price" Width="80" DisplayMemberBinding="{Binding UnitPrice}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Total Price" Width="80" DisplayMemberBinding="{Binding TotalPrice}">
+                                </GridViewColumn>
+                                <GridViewColumn Header="Is Amount Receipt?" Width="60" DisplayMemberBinding="{Binding IsPaid}">
                                 </GridViewColumn>
                             </GridView>
                         </ListView.View>
@@ -92,6 +100,7 @@
                 </Canvas>
 
             </TabItem>
+
         </TabControl>
 
 

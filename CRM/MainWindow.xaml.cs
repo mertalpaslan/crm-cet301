@@ -44,7 +44,7 @@ namespace CRM
                         join c in db.Customers
                          on d.CustomerId equals c.Id
                         select new DealProfile { CustomerName = c.Name, CustomerId = c.Id, ProductName = p.Name, ProductId = p.Id, DealId = d.Id,
-                            Amount = d.Amount, TotalPrice = p.Price * d.Amount, UnitPrice = p.Price }).ToList<DealProfile>();
+                            Amount = d.Amount, TotalPrice = p.Price * d.Amount, UnitPrice = p.Price, IsPaid = d.is_paid, DealName = d.Name}).ToList<DealProfile>();
 
             
 
@@ -122,6 +122,8 @@ namespace CRM
 
         public class DealProfile
         {
+            public string DealName { get; set; }
+
             public string CustomerName { get; set; }
             
             public int CustomerId { get; set; }
@@ -138,12 +140,17 @@ namespace CRM
 
             public int TotalPrice { get; set; }
 
+            public bool IsPaid { get; set; }
+
         }
 
         private void dDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            MessageBox.Show(DList.SelectedItems.ToString());
+            int id = (DList.SelectedItem as DealProfile).DealId;
+            var selectedDeal = db.Deals.Where(d => d.Id == id).Single();
+            db.Deals.Remove(selectedDeal);
+            db.SaveChanges();
+            this.Load();
 
 
             db.SaveChanges();
@@ -152,7 +159,9 @@ namespace CRM
 
         private void dEditBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            int Id = (DList.SelectedItem as DealProfile).DealId;
+            EditDeal EDW = new EditDeal(Id);
+            EDW.ShowDialog();
         }
 
         private void addDealPageBtn(object sender, RoutedEventArgs e)
@@ -160,5 +169,9 @@ namespace CRM
             AddDeal ADW = new AddDeal();
             ADW.ShowDialog();
         }
+
+
+        // Dashboard
+
     }
 }
