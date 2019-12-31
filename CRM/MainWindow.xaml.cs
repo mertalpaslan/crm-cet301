@@ -34,7 +34,15 @@ namespace CRM
         {
             InitializeComponent();
             Load();
-
+            if (CList.SelectedItems.Count == 0)
+            {
+                addBtn.IsHitTestVisible = false;
+            }
+            else
+            {
+                addBtn.IsHitTestVisible = true;
+            }
+            MessageBox.Show(CList.SelectedItems.Count.ToString());
         }
         public void Load()
         {
@@ -54,11 +62,6 @@ namespace CRM
             Products = PList;
             DList.ItemsSource = JoinedDeals;
             Deals = DList;
-            DList.Items.Refresh();
-            DList.ItemsSource = null;
-            DList.Items.Refresh();
-            DList.ItemsSource = JoinedDeals;
-            DList.Items.Refresh();
 
         }
 
@@ -71,20 +74,42 @@ namespace CRM
 
         private void pEditBtn_Click(object sender, RoutedEventArgs e)
         {
-            int Id = (PList.SelectedItem as Product).Id;
-            EditProduct EPW = new EditProduct(Id);
-            EPW.ShowDialog();
+            if (PList.SelectedItems.Count == 1)
+            {
+                int Id = (PList.SelectedItem as Product).Id;
+                EditProduct EPW = new EditProduct(Id);
+                EPW.ShowDialog();
+            }
+            else if (PList.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("Select only one product to edit.");
+            }
+            else
+            {
+                MessageBox.Show("Select a product to edit.");
+            }
         }
 
 
 
         private void pDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            int id = (PList.SelectedItem as Product).Id;
-            var selectedProduct = db.Products.Where(p => p.Id == id).Single();
-            db.Products.Remove(selectedProduct);
-            db.SaveChanges();
-            PList.ItemsSource = db.Products.ToList();
+            if (PList.SelectedItems.Count == 1)
+            {
+                int id = (PList.SelectedItem as Product).Id;
+                var selectedProduct = db.Products.Where(p => p.Id == id).Single();
+                db.Products.Remove(selectedProduct);
+                db.SaveChanges();
+                PList.ItemsSource = db.Products.ToList();
+            }
+            else if (PList.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("Select only one product to delete.");
+            }
+            else
+            {
+                MessageBox.Show("Select a product to delete.");
+            }
 
         }
 
@@ -93,25 +118,50 @@ namespace CRM
 
         private void addCustomerPageBtn(object sender, RoutedEventArgs e)
         {
-            AddCustomer ACW = new AddCustomer();
-            ACW.ShowDialog();
+
+                AddCustomer ACW = new AddCustomer();
+                ACW.ShowDialog();
+
         }
 
         private void cEditBtn_Click(object sender, RoutedEventArgs e)
         {
-            int Id = (CList.SelectedItem as Customer).Id;
-            EditCustomer ECW = new EditCustomer(Id);
-            ECW.ShowDialog();
+            if (CList.SelectedItems.Count == 1)
+            {
+                int Id = (CList.SelectedItem as Customer).Id;
+                EditCustomer ECW = new EditCustomer(Id);
+                ECW.ShowDialog();
+            }
+            else if (CList.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("Select only one customer to edit.");
+            }
+            else
+            {
+                MessageBox.Show("Select a customer to edit.");
+            }
+
         }
 
 
         private void cDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            int id = (CList.SelectedItem as Customer).Id;
-            var selectedCustomer = db.Customers.Where(c => c.Id == id).Single();
-            db.Customers.Remove(selectedCustomer);
-            db.SaveChanges();
-            CList.ItemsSource = db.Customers.ToList();
+            if (CList.SelectedItems.Count == 1)
+            {
+                int id = (CList.SelectedItem as Customer).Id;
+                var selectedCustomer = db.Customers.Where(c => c.Id == id).Single();
+                db.Customers.Remove(selectedCustomer);
+                db.SaveChanges();
+                CList.ItemsSource = db.Customers.ToList();
+            }
+            else if (CList.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("Select only one customer to delete.");
+            }
+            else
+            {
+                MessageBox.Show("Select a customer to delete.");
+            }
 
         }
 
@@ -146,22 +196,45 @@ namespace CRM
 
         private void dDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            int id = (DList.SelectedItem as DealProfile).DealId;
-            var selectedDeal = db.Deals.Where(d => d.Id == id).Single();
-            db.Deals.Remove(selectedDeal);
-            db.SaveChanges();
-            this.Load();
+            if (DList.SelectedItems.Count == 1)
+            {
+                int id = (DList.SelectedItem as DealProfile).DealId;
+                var selectedDeal = db.Deals.Where(d => d.Id == id).Single();
+                db.Deals.Remove(selectedDeal);
+                db.SaveChanges();
+                this.Load();
 
 
-            db.SaveChanges();
-         //   DList.ItemsSource = JoinedDeals.ToList();
+                db.SaveChanges();
+                //   DList.ItemsSource = JoinedDeals.ToList();
+
+            }
+            else if (DList.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("Select only one deal to delete.");
+            }
+            else
+            {
+                MessageBox.Show("Select a deal to delete.");
+            }
         }
 
         private void dEditBtn_Click(object sender, RoutedEventArgs e)
         {
-            int Id = (DList.SelectedItem as DealProfile).DealId;
-            EditDeal EDW = new EditDeal(Id);
-            EDW.ShowDialog();
+            if (DList.SelectedItems.Count == 1)
+            {
+                int Id = (DList.SelectedItem as DealProfile).DealId;
+                EditDeal EDW = new EditDeal(Id);
+                EDW.ShowDialog();
+            }
+            else if (DList.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("Select only one deal to edit.");
+            }
+            else
+            {
+                MessageBox.Show("Select a deal to edit.");
+            }
         }
 
         private void addDealPageBtn(object sender, RoutedEventArgs e)
@@ -172,6 +245,5 @@ namespace CRM
 
 
         // Dashboard
-
     }
 }

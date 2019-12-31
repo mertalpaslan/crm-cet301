@@ -44,7 +44,8 @@ namespace CRM
                 updateCustomer.ContactNumber = cnumberTB.Text;
 
                 db.SaveChanges();
-                MainWindow.Customers.ItemsSource = db.Customers.ToList();
+                MainWindow window = (MainWindow)Application.Current.MainWindow;
+                window.Load();
                 this.Hide();
 
             }

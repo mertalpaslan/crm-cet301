@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Add Customer" Height="294" Width="541">
     <Grid>
-        <TextBlock Text="Add New Product" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#0095FF" Margin="0,6,0,0"/>
+        <TextBlock Text="Add New Customer" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#0095FF" Margin="0,6,0,0"/>
         <TextBox x:Name="nameTB"  HorizontalAlignment="Left" Margin="309,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
         <TextBox x:Name="adressTB" HorizontalAlignment="Left" Margin="309,110,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>
         <TextBox x:Name="cnumberTB" HorizontalAlignment="Left" Margin="309,158,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30"/>

@@ -25,7 +25,6 @@ namespace CRM
         {
             InitializeComponent();
             Id = dealId;
-            bool check = IsPaid.IsChecked ?? false;
             Deal updateDeal = (from d in db.Deals
                                        where d.Id == Id
                                        select d).Single();
@@ -34,12 +33,24 @@ namespace CRM
             customerTB.Text = updateDeal.CustomerId.ToString();
             productTB.Text = updateDeal.ProductId.ToString();
             amountTB.Text = updateDeal.Amount.ToString();
-            check = updateDeal.is_paid;
+            IsPaid.IsChecked = updateDeal.is_paid;
         }
 
         private void editDealBtn_Click(object sender, RoutedEventArgs e)
         {
+            bool check = IsPaid.IsChecked ?? false;
+            Deal updateDeal = (from d in db.Deals
+                               where d.Id == Id
+                               select d).Single();
 
+            updateDeal.Name = nameTB.Text;
+            updateDeal.CustomerId = int.Parse(customerTB.Text);
+            updateDeal.ProductId = int.Parse(productTB.Text);
+            updateDeal.is_paid = check;
+            db.SaveChanges();
+            MainWindow window = (MainWindow)Application.Current.MainWindow;
+            window.Load();
+            this.Hide();
         }
     }
 }
