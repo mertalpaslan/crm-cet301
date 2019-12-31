@@ -48,7 +48,8 @@ namespace CRM
                 updateProduct.Price = int.Parse(priceTB.Text);
 
                 db.SaveChanges();
-                MainWindow.Products.ItemsSource = db.Products.ToList();
+                MainWindow window = (MainWindow)Application.Current.MainWindow;
+                window.Load();
                 this.Hide();
 
             }

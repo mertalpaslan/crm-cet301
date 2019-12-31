@@ -1,5 +1,4 @@
-﻿
-    <Window x:Class="CRM.MainWindow"
+﻿<Window x:Class="CRM.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -17,7 +16,22 @@
             <TabItem Width="150" Height="50" Header="Dashboard">
                 <Canvas>
                     <Label Content="Total Deals"/>
-                    <TextBlock Name="totalDeals" Canvas.Left="18" Canvas.Top="31" Text="TextBlock" TextWrapping="Wrap"/>
+                    <Label Content="Total Sales Revenue" Canvas.Left="50" Canvas.Top="108"/>
+                    <Label Content="Number of Products" Canvas.Left="290"/>
+                    <Label Content="Number of Customers" Canvas.Left="118" Canvas.Top="4"/>
+                    <Label Content="Number of Unpaid Deals" Canvas.Left="424"/>
+                    <Label Content="Total Amount Paid" Canvas.Left="424" Canvas.Top="104"/>
+                    <Label Content="Total Amount Unpaid" Canvas.Left="228" Canvas.Top="110"/>
+
+
+                    <TextBlock x:Name="totalDeals" Canvas.Left="9" Canvas.Top="31" Text="totalDeals" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalSales" Canvas.Left="65" Canvas.Top="139" Text="totalSales" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalProducts" Canvas.Left="309" Canvas.Top="31" Text="totalProducts" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalCustomers" Canvas.Left="143" Canvas.Top="31" Text="totalCustomers" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalUnpaidDeals" Canvas.Left="451" Canvas.Top="31" Text="totalUnpaidDeals" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalPaidAmount" Canvas.Left="439" Canvas.Top="133" Text="totalPaidAmount" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalUnpaidAmount" Canvas.Left="243" Canvas.Top="133" Text="totalUnpaidAmount" TextWrapping="Wrap"/>
+
                 </Canvas>
 
             </TabItem>
@@ -86,11 +100,11 @@
                                 </GridViewColumn>
                                 <GridViewColumn Header="Amount" Width="80" DisplayMemberBinding="{Binding Amount}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Unit Price" Width="80" DisplayMemberBinding="{Binding UnitPrice}">
+                                <GridViewColumn Header="Unit Price" Width="70" DisplayMemberBinding="{Binding UnitPrice}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Total Price" Width="80" DisplayMemberBinding="{Binding TotalPrice}">
+                                <GridViewColumn Header="Total Price" Width="70" DisplayMemberBinding="{Binding TotalPrice}">
                                 </GridViewColumn>
-                                <GridViewColumn Header="Is Amount Receipt?" Width="60" DisplayMemberBinding="{Binding IsPaid}">
+                                <GridViewColumn Header="Is Paid?" Width="80" DisplayMemberBinding="{Binding IsPaid}">
                                 </GridViewColumn>
                             </GridView>
                         </ListView.View>

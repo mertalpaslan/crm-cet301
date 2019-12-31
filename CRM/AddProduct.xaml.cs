@@ -34,7 +34,8 @@ namespace CRM
             };
             db.Products.Add(newProduct);
             db.SaveChanges();
-            MainWindow.Products.ItemsSource = db.Products.ToList();
+            MainWindow window = (MainWindow)Application.Current.MainWindow;
+            window.Load();
             this.Hide();
 
         }

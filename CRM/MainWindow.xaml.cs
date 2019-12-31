@@ -34,27 +34,29 @@ namespace CRM
         {
             InitializeComponent();
             Load();
-            if (CList.SelectedItems.Count == 0)
-            {
-                addBtn.IsHitTestVisible = false;
-            }
-            else
-            {
-                addBtn.IsHitTestVisible = true;
-            }
-            MessageBox.Show(CList.SelectedItems.Count.ToString());
         }
         public void Load()
         {
-        var JoinedDeals = (from d in db.Deals
-                        join p in db.Products
-                        on d.ProductId equals p.Id
-                        join c in db.Customers
-                         on d.CustomerId equals c.Id
-                        select new DealProfile { CustomerName = c.Name, CustomerId = c.Id, ProductName = p.Name, ProductId = p.Id, DealId = d.Id,
-                            Amount = d.Amount, TotalPrice = p.Price * d.Amount, UnitPrice = p.Price, IsPaid = d.is_paid, DealName = d.Name}).ToList<DealProfile>();
+            var JoinedDeals = (from d in db.Deals
+                               join p in db.Products
+                               on d.ProductId equals p.Id
+                               join c in db.Customers
+                                on d.CustomerId equals c.Id
+                               select new DealProfile
+                               {
+                                   CustomerName = c.Name,
+                                   CustomerId = c.Id,
+                                   ProductName = p.Name,
+                                   ProductId = p.Id,
+                                   DealId = d.Id,
+                                   Amount = d.Amount,
+                                   TotalPrice = p.Price * d.Amount,
+                                   UnitPrice = p.Price,
+                                   IsPaid = d.is_paid,
+                                   DealName = d.Name
+                               }).ToList<DealProfile>();
 
-            
+
 
             CList.ItemsSource = db.Customers.ToList();
             Customers = CList;
@@ -63,8 +65,22 @@ namespace CRM
             DList.ItemsSource = JoinedDeals;
             Deals = DList;
 
-        }
+            int totalDealCount = JoinedDeals.Count;
+            int totalSalesRevenue = JoinedDeals.Select(x => x.TotalPrice).Sum();
+            int productCount = db.Products.Count();
+            int customerCount = db.Customers.Count();
+            int unpaidDealCount = (from d in JoinedDeals where d.IsPaid == false select d).Count();
+            int totalUnpaid = (from d in JoinedDeals where d.IsPaid == false select d.TotalPrice).Sum();
+            int totalPaid = (from d in JoinedDeals where d.IsPaid == true select d.TotalPrice).Sum();
 
+            totalDeals.Text = totalDealCount.ToString();
+            totalSales.Text = $"${totalSalesRevenue.ToString()}";
+            totalProducts.Text = productCount.ToString();
+            totalCustomers.Text = customerCount.ToString();
+            totalUnpaidDeals.Text = unpaidDealCount.ToString();
+            totalUnpaidAmount.Text = $"${totalUnpaid.ToString()}";
+            totalPaidAmount.Text = $"${totalPaid.ToString()}";
+        }
         // Product
         private void addProductPageBtn(object sender, RoutedEventArgs e)
         {
