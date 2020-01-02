@@ -14,23 +14,23 @@
         <TextBlock Text="Customer Relationship Management" Grid.ColumnSpan="1" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#0095FF"/>
         <TabControl TabStripPlacement="Left" Grid.Row="1">
             <TabItem Width="150" Height="50" Header="Dashboard">
-                <Canvas>
-                    <Label Content="Total Deals"/>
-                    <Label Content="Total Sales Revenue" Canvas.Left="50" Canvas.Top="108"/>
-                    <Label Content="Number of Products" Canvas.Left="290"/>
-                    <Label Content="Number of Customers" Canvas.Left="118" Canvas.Top="4"/>
-                    <Label Content="Number of Unpaid Deals" Canvas.Left="424"/>
-                    <Label Content="Total Amount Paid" Canvas.Left="424" Canvas.Top="104"/>
-                    <Label Content="Total Amount Unpaid" Canvas.Left="228" Canvas.Top="110"/>
+                <Canvas Background="MintCream">
+                    <Label Content="Total Deals" FontStyle="Italic" FontSize="12" Canvas.Left="9" Canvas.Top="29"/>
+                    <Label Content="Total Sales Revenue" FontStyle="Italic" FontSize="12" Canvas.Left="50" Canvas.Top="138"/>
+                    <Label Content="Number of Products" FontStyle="Italic" FontSize="12" Canvas.Left="299" Canvas.Top="29"/>
+                    <Label Content="Number of Customers" FontStyle="Italic" FontSize="12" Canvas.Left="127" Canvas.Top="29"/>
+                    <Label Content="Number of Unpaid Deals" FontStyle="Italic" FontSize="12" Canvas.Left="433" Canvas.Top="29"/>
+                    <Label Content="Total Amount Paid" FontStyle="Italic" FontSize="12" Canvas.Left="424" Canvas.Top="134"/>
+                    <Label Content="Total Amount Unpaid" FontStyle="Italic" FontSize="12" Canvas.Left="228" Canvas.Top="140"/>
 
 
-                    <TextBlock x:Name="totalDeals" Canvas.Left="9" Canvas.Top="31" Text="totalDeals" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="totalSales" Canvas.Left="65" Canvas.Top="139" Text="totalSales" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="totalProducts" Canvas.Left="309" Canvas.Top="31" Text="totalProducts" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="totalCustomers" Canvas.Left="143" Canvas.Top="31" Text="totalCustomers" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="totalUnpaidDeals" Canvas.Left="451" Canvas.Top="31" Text="totalUnpaidDeals" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="totalPaidAmount" Canvas.Left="439" Canvas.Top="133" Text="totalPaidAmount" TextWrapping="Wrap"/>
-                    <TextBlock x:Name="totalUnpaidAmount" Canvas.Left="243" Canvas.Top="133" Text="totalUnpaidAmount" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalDeals" FontSize="18" FontWeight="Bold" Canvas.Left="34" Canvas.Top="60" Text="totalDeals" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalSales" FontSize="18" FontWeight="Bold" Canvas.Left="89" Canvas.Top="169" Text="totalSales" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalProducts" FontSize="18" FontWeight="Bold" Canvas.Left="340" Canvas.Top="60" Text="totalProducts" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalCustomers" FontSize="18" FontWeight="Bold" Canvas.Left="173" Canvas.Top="60" Text="totalCustomers" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalUnpaidDeals" FontSize="18" FontWeight="Bold" Canvas.Left="485" Canvas.Top="60" Text="totalUnpaidDeals" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalPaidAmount" FontSize="18" FontWeight="Bold" Canvas.Left="462" Canvas.Top="163" Text="totalPaidAmount" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="totalUnpaidAmount" FontSize="18" FontWeight="Bold" Canvas.Left="264" Canvas.Top="163" Text="totalUnpaidAmount" TextWrapping="Wrap"/>
 
                 </Canvas>
 

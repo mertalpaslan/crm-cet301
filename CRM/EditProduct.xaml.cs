@@ -46,10 +46,8 @@ namespace CRM
                 updateProduct.Name = nameTB.Text;
                 updateProduct.Description = descriptionTB.Text;
                 updateProduct.Price = int.Parse(priceTB.Text);
-
                 db.SaveChanges();
-                MainWindow window = (MainWindow)Application.Current.MainWindow;
-                window.Load();
+                MainWindow.Products.ItemsSource = db.Products.ToList();
                 this.Hide();
 
             }
